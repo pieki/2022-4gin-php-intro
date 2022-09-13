@@ -1,7 +1,8 @@
 <?php
-$ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu lacus enim. Mauris vestibulum, mi et aliquet fermentum, massa risus condimentum odio, a venenatis risus sapien vitae ex. Sed sed nibh sit amet nisl auctor elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla faucibus dapibus ligula, vel mollis orci molestie non. Proin a tellus dapibus, ultricies arcu suscipit, dictum elit. Ut rhoncus dapibus neque, nec fringilla ante dignissim vitae. Integer faucibus viverra nunc sed pellentesque. Duis eros nulla, aliquet at erat a, tempus luctus urna. Vivamus ac pretium lacus. Integer posuere volutpat tellus.";
-$ipsum2 = explode (" ", $ipsum);
-foreach ($ipsum2 as $tak){
-    echo "$tak <br>";
+$ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pretium turpis vel nisi dapibus, eget gravida urna maximus. Vivamus faucibus accumsan orci. Ut pulvinar aliquam lorem quis suscipit. Nunc est velit, condimentum sed nisi ac, egestas rhoncus nulla. Cras nec nisi nec neque ultrices vestibulum. Morbi eu libero gravida, aliquet sapien id, mollis nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin risus metus, feugiat quis felis quis, laoreet imperdiet turpis. Proin vulputate ultricies sem, vel tincidunt libero porttitor at. Nam eu mattis sapien, ac malesuada nisi. Aliquam condimentum, velit semper auctor interdum, enim.";
+$slowa = explode(" ", $ipsum);
+foreach($slowa as $slowo){
+    if(preg_match('/\b(\w*e\w*)\b/', $slowo, $match) == true){
+    echo "$match[0] </br>";
+    }
 }
-?>
