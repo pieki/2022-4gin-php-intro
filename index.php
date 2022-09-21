@@ -14,5 +14,36 @@ foreach($slowa as $slowo){
     }
 }
 };
-sortandsearch($ipsum, $szukaj);
+function renderHTMLTable($ilosc, $tak){ 
+    $slowa = explode(" ", $tak);
+$liczba = 1;
+echo '<table>';
+foreach ($slowa as $wyraz){
+    if ($liczba <= $ilosc){
+        if($liczba % $ilosc == 1){
+            echo "<tr><th>".$wyraz."</th>";
+        }
+        else if ($liczba % $ilosc == 0){
+            echo "<th>".$wyraz."</th></tr>";
+        }
+        else {
+            echo "<th>".$wyraz."</th>";
+        }
+     } else {
+            if($liczba % $ilosc == 1){
+                echo "<tr><td>".$wyraz."</td>";
+            }
+            else if ($liczba % $ilosc == 0){
+                echo "<td>".$wyraz."</td></tr>";
+            }
+            else {
+                echo "<td>".$wyraz."</td>";
+            }
+        }
+        $liczba++;
+    }
+    echo "</table>";
+}
+$kolumna = "4";
+renderHTMLTable ($kolumna, $ipsum);
 ?>
